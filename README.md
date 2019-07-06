@@ -1,6 +1,11 @@
 # over-the-wire
 hacking
 
+# gdb settings
+```
+(gdb) set exec-wrapper env -u LINES -u COLUMNS
+```
+
 # shellcode
 https://dhavalkapil.com/blogs/Shellcode-Injection/
 ```
