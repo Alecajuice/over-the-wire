@@ -1,0 +1,14 @@
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(int argc, char *const argv[]) {
+  int num = atoi(argv[1]);
+  char *const arg[] = {NULL};
+  char *const env[] = {NULL};
+  for (int i = 0; i < num; i++) {
+    char s[50];
+    sprintf(s, "export PAD%d=$(python -c 'print \"A\"*100000)", i);
+    execve(s, arg, env);
+  }
+}

@@ -1,0 +1,7 @@
+#include <sys/stat.h>
+#include <stdio.h>
+
+int main() {
+  printf("%ld", sizeof(stat));
+  return sizeof(stat);
+}

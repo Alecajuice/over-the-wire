@@ -1,0 +1,1 @@
+set exec-wrapper env -u LINES -u COLUMNS

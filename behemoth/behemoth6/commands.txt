@@ -1,0 +1,6 @@
+
+//Copy bytecode to binary
+objcopy -O binary file.o file.b
+
+//Dump binary
+hexdump -e '16/1 "_x%02X" "\n"' file.b | sed 's/_/\\/g; s/.*/    "&"/'

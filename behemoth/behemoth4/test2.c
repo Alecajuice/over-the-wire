@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <unistd.h>
+
+int main(int argc, char *const argv[], char *const envp[]) {
+  printf("pid 2: %d\n", getpid());
+  char *path;
+  sprintf(path, "/tmp/%d", getpid());
+  FILE *file = fopen(path, "r");
+  char *contents;
+  fscanf(file, "%s", contents);
+  printf("contents: %s\n", contents);
+  fclose(file);
+  return 0;
+}
