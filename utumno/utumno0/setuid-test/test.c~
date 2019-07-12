@@ -1,0 +1,30 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <sys/errno.h>
+
+int main () {
+  char *const argsv[] = {NULL};
+  printf("Real user id = %d, Effective User id = %d\n",getuid(),geteuid());
+  //  setreuid(geteuid(), geteuid());
+  printf("Real user id = %d, Effective User id = %d\n",getuid(),geteuid());
+  char *const arg[3] = {"/bin/cat", "secret", NULL};
+  execve("/bin/cat", arg, argsv);
+  execve("/bin/sh", argsv, argsv);
+  return 0;
+}
+/*
+int main(void)
+{
+  char *args[3];
+
+  args[0] = "/bin/cat";
+  args[1] = "/etc/passwd";
+  args[2] = NULL;
+
+  printf("%d", errno);
+  execve(args[0], args, NULL);
+  printf("%d", errno);
+  return(0);
+}
+
+*/

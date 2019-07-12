@@ -1,0 +1,3 @@
+- euid needs to be set to do most things, including cat
+- however, shells like bash check if ruid != euid then revokes priveleges
+  - in this case need to set ruid

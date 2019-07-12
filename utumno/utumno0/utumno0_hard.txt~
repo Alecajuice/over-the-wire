@@ -1,0 +1,9 @@
+PoC in ptrace.c
+
+- used ptrace to read and write to registers
+- by writing to ecx and edx on a SYS_write call, can manipulate source address and length of write
+- read esp, then write values (esp-2048) > ecx and 4096 > edx
+- read stack values, write down addresses of note
+    - addresses of note in addresses.txt
+- noticed that there were addresses that were the same as the solution in utumno0
+- read that address by putting it in ecx
